@@ -18,7 +18,6 @@ namespace Sample.iOS
 		private UIButton _alertButton;
 
 
-
 		public MainViewController()
 		{
 			Title = "Menu";
@@ -50,7 +49,7 @@ namespace Sample.iOS
 			_checkBoxButton.Frame = new CGRect(10, 160, View.Bounds.Width - 20, 40);
 
 			_sliderButton = UIButton.FromType(UIButtonType.System);
-			_sliderButton.SetTitle("Les reglettes", UIControlState.Normal);
+			_sliderButton.SetTitle("Réglette", UIControlState.Normal);
 			_sliderButton.TouchUpInside += _slider_TouchUpInside;
 			_sliderButton.Frame = new CGRect(10, 210, View.Bounds.Width - 20, 40);
 
