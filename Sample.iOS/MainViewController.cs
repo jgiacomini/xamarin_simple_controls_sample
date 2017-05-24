@@ -55,7 +55,7 @@ namespace Sample.iOS
 
 
 			_progressBarButton = UIButton.FromType(UIButtonType.System);
-			_progressBarButton.SetTitle("Barre de progression", UIControlState.Normal);
+			_progressBarButton.SetTitle("Afficher un chargement", UIControlState.Normal);
 			_progressBarButton.TouchUpInside += _progressBarButton_TouchUpInside;
 			_progressBarButton.Frame = new CGRect(10, 260, View.Bounds.Width - 20, 40);
 

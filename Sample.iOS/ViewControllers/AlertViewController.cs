@@ -29,13 +29,13 @@ namespace Sample.iOS.ViewControllers
 
 			_displaySimpleAlertButton = UIButton.FromType(UIButtonType.System);
 			_displaySimpleAlertButton.Frame = new CGRect(10, 10, View.Bounds.Width - 20, 40);
-			_displaySimpleAlertButton.SetTitle("Simple alert", UIControlState.Normal);
+			_displaySimpleAlertButton.SetTitle("Alerte simple", UIControlState.Normal);
 			_displaySimpleAlertButton.TouchUpInside += _displaySimpleAlertButton_TouchUpInside;
 
 
 			_displayComplexAlertButton = UIButton.FromType(UIButtonType.System);
 			_displayComplexAlertButton.Frame = new CGRect(10, 60, View.Bounds.Width - 20, 40);
-			_displayComplexAlertButton.SetTitle("Simple alert", UIControlState.Normal);
+			_displayComplexAlertButton.SetTitle("Alerte complexe", UIControlState.Normal);
 			_displayComplexAlertButton.TouchUpInside += _displayComplexAlertButton_TouchUpInside;
 
 
@@ -50,7 +50,6 @@ namespace Sample.iOS.ViewControllers
             _displayLogOutButton.Frame = new CGRect(10, 160, View.Bounds.Width - 20, 40);
             _displayLogOutButton.SetTitle("Déconnexion", UIControlState.Normal);
             _displayLogOutButton.TouchUpInside += _displayLogOutButton_TouchUpInside;
-
 
             this.View.AddSubviews(_displaySimpleAlertButton, _displayComplexAlertButton, _displayActionSheetButton, _displayLogOutButton);
 		}
