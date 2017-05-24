@@ -61,7 +61,7 @@ namespace Sample.iOS
 
 			_alertButton = UIButton.FromType(UIButtonType.System);
 			_alertButton.SetTitle("Afficher des alertes", UIControlState.Normal);
-			_alertButton.TouchUpInside += _progressBarButton_TouchUpInside;
+            _alertButton.TouchUpInside += _alertButton_TouchUpInside;
 			_alertButton.Frame = new CGRect(10, 310, View.Bounds.Width - 20, 40);
 
 			View.AddSubviews(_labelButton,
@@ -106,7 +106,7 @@ namespace Sample.iOS
 
 		void _alertButton_TouchUpInside(object sender, EventArgs e)
 		{
-			this.NavigationController.PushViewController(new ProgressBarViewController(), true);
+            this.NavigationController.PushViewController(new AlertViewController(), true);
 		}
 	}
 }
