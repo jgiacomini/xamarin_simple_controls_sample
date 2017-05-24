@@ -7,9 +7,9 @@ namespace Sample.iOS.ViewControllers
 {
     public class ProgressBarViewController : UIViewController
     {
-        UIProgressView _progressView;
+        private UIProgressView _progressView;
 
-        UIActivityIndicatorView _activityView;
+        private UIActivityIndicatorView _activityView;
         public ProgressBarViewController()
         {
 			Title = "Afficher un chargement";
@@ -26,10 +26,15 @@ namespace Sample.iOS.ViewControllers
             _progressView.Style = UIProgressViewStyle.Bar;
 			_progressView.Frame = new CGRect(10, 10, View.Bounds.Width - 20, 40);
 
+
+            _progressView.TintColor = UIColor.Red;
+
             _activityView = new UIActivityIndicatorView();
             _activityView.ActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray;
 			_activityView.Frame = new CGRect(10, 60, View.Bounds.Width - 20, 40);
             _activityView.HidesWhenStopped = true;
+
+            _activityView.Color = UIColor.Red;
 
 			View.AddSubviews(_progressView, _activityView);
 
