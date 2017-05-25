@@ -9,7 +9,7 @@ namespace Sample.iOS.ViewControllers
     {
         public LabelViewController()
         {
-			Title = "Label sample";
+			Title = "Libellé";
 
 			View.BackgroundColor = UIColor.White;
 			this.EdgesForExtendedLayout = UIRectEdge.None;

@@ -27,7 +27,7 @@ namespace Sample.iOS
 		public override void ViewDidLoad()
 		{
 			_labelButton = UIButton.FromType(UIButtonType.System);
-			_labelButton.SetTitle("Libéllé", UIControlState.Normal);
+			_labelButton.SetTitle("Libellé", UIControlState.Normal);
 			_labelButton.TouchUpInside += _labelButton_TouchUpInside;
 			_labelButton.Frame = new CGRect(10, 10, View.Bounds.Width - 20, 40);
 

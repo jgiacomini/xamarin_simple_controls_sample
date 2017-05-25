@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using CoreGraphics;
 using UIKit;
 
@@ -14,7 +15,7 @@ namespace Sample.iOS.ViewControllers
 
         public TextFieldViewController()
         {
-			Title = "TextField sample";
+			Title = "TSaisir un texte, un nombre";
 
 			View.BackgroundColor = UIColor.White;
 			this.EdgesForExtendedLayout = UIRectEdge.None;
@@ -22,17 +23,20 @@ namespace Sample.iOS.ViewControllers
             _textField = new UITextField();
 			_textField.Frame = new CGRect(10, 10, View.Bounds.Width - 20, 40);
             _textField.BorderStyle = UITextBorderStyle.Line;
-			_textField.Placeholder = "Saisir un email";
+            //_textField.Placeholder = "Saisir un email";
+
 			//_textField.Layer.BorderWidth = 1;
 			//_textField.Layer.BorderColor = UIColor.Black.CGColor;
 
             _textField.ClearButtonMode = UITextFieldViewMode.WhileEditing;
 			_textField.SpellCheckingType = UITextSpellCheckingType.Yes;
 			_textField.AutocorrectionType = UITextAutocorrectionType.Yes;
-            _textField.KeyboardType = UIKeyboardType.EmailAddress;
+            _textField.KeyboardType = UIKeyboardType.NumberPad;
+            _textField.ValueChanged += _textField_ValueChanged;
 
             _textField.AutocapitalizationType = UITextAutocapitalizationType.Sentences;
 
+            _textField.EditingDidEnd += _textField_EditingDidEnd;
 
             _textField.ReturnKeyType = UIReturnKeyType.Continue;
             _textField.ShouldReturn = TextFieldShouldReturn;
@@ -40,7 +44,7 @@ namespace Sample.iOS.ViewControllers
 
 			_passwordField = new UITextField();
 			_passwordField.Frame = new CGRect(10, 60, View.Bounds.Width - 20, 40);
-            _passwordField.BorderStyle = UITextBorderStyle.Bezel;
+            _passwordField.BorderStyle = UITextBorderStyle.RoundedRect;
 
 			_passwordField.ShouldReturn = TextFieldShouldReturn;
             _passwordField.Tag = 1;
@@ -63,6 +67,23 @@ namespace Sample.iOS.ViewControllers
 
 
             View.AddSubviews(_textField, _passwordField,_stepper, _labelStepper);
+        }
+
+        void _textField_ValueChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine($"Le texte du champs de saisie réglette a changé {_textField.Text}");
+        }
+
+        void _textField_EditingDidEnd(object sender, EventArgs e)
+        {
+            if (Regex.Match(_textField.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").Success)
+            {
+				Console.WriteLine("champs valide");
+            }
+            else
+            {
+                Console.WriteLine("champs invalide");
+            }
         }
 
         void _stepper_ValueChanged(object sender, EventArgs e)
