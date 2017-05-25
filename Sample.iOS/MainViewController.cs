@@ -27,21 +27,19 @@ namespace Sample.iOS
 		public override void ViewDidLoad()
 		{
 			_labelButton = UIButton.FromType(UIButtonType.System);
-			_labelButton.SetTitle("Label", UIControlState.Normal);
+			_labelButton.SetTitle("Libéllé", UIControlState.Normal);
 			_labelButton.TouchUpInside += _labelButton_TouchUpInside;
 			_labelButton.Frame = new CGRect(10, 10, View.Bounds.Width - 20, 40);
 
 			_textFieldButton = UIButton.FromType(UIButtonType.System);
-			_textFieldButton.SetTitle("Champs de saisie", UIControlState.Normal);
+			_textFieldButton.SetTitle("Saisir un texte, un nombre", UIControlState.Normal);
 			_textFieldButton.TouchUpInside += _textField_TouchUpInside;
 			_textFieldButton.Frame = new CGRect(10, 60, View.Bounds.Width - 20, 40);
-
 
 			_buttonButton = UIButton.FromType(UIButtonType.System);
 			_buttonButton.SetTitle("Boutons", UIControlState.Normal);
 			_buttonButton.TouchUpInside += _button_TouchUpInside;
 			_buttonButton.Frame = new CGRect(10, 110, View.Bounds.Width - 20, 40);
-
 
 			_checkBoxButton = UIButton.FromType(UIButtonType.System);
 			_checkBoxButton.SetTitle("Case à cocher", UIControlState.Normal);
@@ -52,7 +50,6 @@ namespace Sample.iOS
 			_sliderButton.SetTitle("Réglette", UIControlState.Normal);
 			_sliderButton.TouchUpInside += _slider_TouchUpInside;
 			_sliderButton.Frame = new CGRect(10, 210, View.Bounds.Width - 20, 40);
-
 
 			_progressBarButton = UIButton.FromType(UIButtonType.System);
 			_progressBarButton.SetTitle("Afficher un chargement", UIControlState.Normal);
@@ -75,7 +72,6 @@ namespace Sample.iOS
 
 		void _labelButton_TouchUpInside(object sender, EventArgs e)
 		{
-            var controller = new LabelViewController();
             this.NavigationController.PushViewController(new LabelViewController(), true);
 		}
 

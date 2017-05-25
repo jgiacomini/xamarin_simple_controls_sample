@@ -26,7 +26,6 @@ namespace Sample.iOS.ViewControllers
             _progressView.Style = UIProgressViewStyle.Bar;
 			_progressView.Frame = new CGRect(10, 10, View.Bounds.Width - 20, 40);
 
-
             _progressView.TintColor = UIColor.Red;
 
             _activityView = new UIActivityIndicatorView();
