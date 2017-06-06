@@ -16,7 +16,7 @@ namespace Sample.iOS.ViewControllers
 
         public AlertViewController()
         {
-            Title = "Alert sample";
+            Title = "Afficher des alertes";
 			View.BackgroundColor = UIColor.White;
 			this.EdgesForExtendedLayout = UIRectEdge.None;
         }
@@ -58,12 +58,10 @@ namespace Sample.iOS.ViewControllers
 		{
             UIAlertController alert = UIAlertController.Create("Titre", "Message", UIAlertControllerStyle.Alert);
 
-			// Ajout des différentes actions
-			alert.AddAction(UIAlertAction.Create("Option 42", UIAlertActionStyle.Default, (action) => Console.WriteLine("Option '42' selectionnée")));
+            // Ajout d'une action OK
+            UIAlertAction action = UIAlertAction.Create("OK", UIAlertActionStyle.Default, (currentAction) => Console.WriteLine("Option 'OK' sélectionnée"));
+            alert.AddAction(action);
 
-			alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, (action) => Console.WriteLine("Option 'OK' selectionnée")));
-
-			alert.AddAction(UIAlertAction.Create("Annuler", UIAlertActionStyle.Cancel, (action) => Console.WriteLine("Option 'Annuler' selectionnée.")));
 
 			// Affiche l'alerte
 			await this.PresentViewControllerAsync(alert, true);
@@ -78,11 +76,11 @@ namespace Sample.iOS.ViewControllers
             alert.AddTextField((textField) => { });
 
 			// Ajout des différentes actions
-			alert.AddAction(UIAlertAction.Create("Option 42", UIAlertActionStyle.Default, (action) => Console.WriteLine("Option '42' selectionnée")));
+			alert.AddAction(UIAlertAction.Create("Option 42", UIAlertActionStyle.Default, (action) => Console.WriteLine("Option '42' sélectionnée")));
 
-			alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, (action) => Console.WriteLine("Option 'OK' selectionnée")));
+			alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Destructive, (action) => Console.WriteLine("Option 'OK' sélectionnée")));
 
-			alert.AddAction(UIAlertAction.Create("Annuler", UIAlertActionStyle.Cancel, (action) => Console.WriteLine("Option 'Annuler' selectionnée.")));
+			alert.AddAction(UIAlertAction.Create("Annuler", UIAlertActionStyle.Cancel, (action) => Console.WriteLine("Option 'Annuler' sélectionnée.")));
 
 			// Affiche l'alerte
             await this.PresentViewControllerAsync(alert, true);
@@ -95,11 +93,11 @@ namespace Sample.iOS.ViewControllers
             UIAlertController actionSheetAlert = UIAlertController.Create("Titre", "Message", UIAlertControllerStyle.ActionSheet);
 
 			// Ajout des différentes actions
-			actionSheetAlert.AddAction(UIAlertAction.Create("Option 1", UIAlertActionStyle.Default, (action) => Console.WriteLine("Option '42' selectionnée")));
+			actionSheetAlert.AddAction(UIAlertAction.Create("Option 1", UIAlertActionStyle.Default, (action) => Console.WriteLine("Option '42' sélectionnée")));
 
-            actionSheetAlert.AddAction(UIAlertAction.Create("Option 42", UIAlertActionStyle.Destructive, (action) => Console.WriteLine("Option 'OK' selectionnée")));
+            actionSheetAlert.AddAction(UIAlertAction.Create("Option 42", UIAlertActionStyle.Destructive, (action) => Console.WriteLine("Option 'OK' sélectionnée")));
 
-			actionSheetAlert.AddAction(UIAlertAction.Create("Annuler", UIAlertActionStyle.Cancel, (action) => Console.WriteLine("Option 'Annuler' selectionnée.")));
+			actionSheetAlert.AddAction(UIAlertAction.Create("Annuler", UIAlertActionStyle.Cancel, (action) => Console.WriteLine("Option 'Annuler' sélectionnée.")));
 
             // Affiche l'alerte
             await this.PresentViewControllerAsync(actionSheetAlert, true);
@@ -110,9 +108,9 @@ namespace Sample.iOS.ViewControllers
 			UIAlertController actionSheetAlert = UIAlertController.Create(null, "Souhaitez-vous vraiment vous déconnecter ?", UIAlertControllerStyle.ActionSheet);
 
 			// Ajout des différentes actions
-			actionSheetAlert.AddAction(UIAlertAction.Create("Déconnexion", UIAlertActionStyle.Destructive, (action) => Console.WriteLine("Option 'OK' selectionnée")));
+			actionSheetAlert.AddAction(UIAlertAction.Create("Déconnexion", UIAlertActionStyle.Destructive, (action) => Console.WriteLine("Option 'Déconnexion' sélectionnée")));
 
-			actionSheetAlert.AddAction(UIAlertAction.Create("Annuler", UIAlertActionStyle.Cancel, (action) => Console.WriteLine("Option 'Annuler' selectionnée.")));
+			actionSheetAlert.AddAction(UIAlertAction.Create("Annuler", UIAlertActionStyle.Cancel, (action) => Console.WriteLine("Option 'Annuler' sélectionnée.")));
 
 			// Affiche l'alerte
             await this.PresentViewControllerAsync(actionSheetAlert, true);
